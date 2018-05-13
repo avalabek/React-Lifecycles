@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function loggify(Wrapped){
 
-  let original ={};
+  let originals ={};
   //store copies of functions here
   const methodsToLog = ["componentWillMount"];
   //note you should not do this in a production environment, this is jsut to learn
