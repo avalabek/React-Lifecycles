@@ -6,6 +6,9 @@ class App extends Component {
 
   static displayName = "App";
 
+  state = {
+    data: "No Data yet!"
+  }
   fetchData = () => {
     console.log("Going to fetch data!");
     setTimeout(
@@ -19,12 +22,22 @@ class App extends Component {
   }
 componentDidMount(){
   this.fetchData()
+  const canvasCtx = this.refs.appCanvas.getContext('2d');
+  canvasCtx.fillStyle = "lightBlue";
+  canvasCtx.arc(75,75,50,0, 2 * Math.PI)
+  canvasCtx.fill()
 }
   render(){
     console.log(this.state);
     return (
       <div>
           Hello World
+          <h4> {this.state.data}</h4>
+          <canvas
+            ref={"appCanvas"}
+            height={200}
+            width={200}
+            />
       </div>    
     )
   }
