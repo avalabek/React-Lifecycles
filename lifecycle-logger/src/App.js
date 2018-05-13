@@ -29,6 +29,7 @@ componentDidMount(){
 }
   render(){
     console.log(this.state);
+    let {showPollChild} =this.state
     return (
       <div>
           Hello World
@@ -38,9 +39,50 @@ componentDidMount(){
             height={200}
             width={200}
             />
+          <button
+            onClick={()=>
+            this.setState((prevState)=> {
+              return {
+                showPollChild: !prevState.showPollChild
+              }
+            })
+          }
+          >
+          {(showPollChild) ? "Hide" : "Show"} PollChild
+          </button>
+          {(showPollChild) ? <PollChild/> : null}    
       </div>    
     )
   }
+}
+//parent component is ready to show pollchild child component
+class PollChild extends Component {
+  static displayNmae = "PollChild";
+  //another way to initialize state w/o constructor is :
+  state = {
+    poll: Math.random()
+  }
+  componentDidMount(){
+    this.pollData()
+  }
+  pollData = () => {
+    this.pollInterval = setInterval(
+      ()=>{
+        console.log("Poll!")
+        this.setState({
+          poll:Math.random()
+        })
+      },
+      1000
+    )
+  }
+    //pollChild's render function
+    render(){
+      return(
+        <h4>poll {this.state.poll}</h4>
+      )
+    }
+
 }
 
 App = loggify(App);
