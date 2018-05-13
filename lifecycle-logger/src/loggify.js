@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import styled from "styled-components";
 
 export default function loggify(Wrapped){
-
+  
+  let original ={};
+  //store copies of functions here
+  const methodsToLog = ["componentWillMount"];
+  
 
 
   return class extends Component {
