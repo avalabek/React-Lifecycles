@@ -65,6 +65,9 @@ class PollChild extends Component {
   componentDidMount(){
     this.pollData()
   }
+  componentWillUnmount(){
+    clearInterval(this.pollInterval);
+  }
   pollData = () => {
     this.pollInterval = setInterval(
       ()=>{
@@ -86,5 +89,6 @@ class PollChild extends Component {
 }
 
 App = loggify(App);
+PollChild = loggify(PollChild);
 
 export default App;
