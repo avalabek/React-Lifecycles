@@ -2,26 +2,40 @@ import React, { Component } from 'react';
 
 
 class App extends Component {
-  render() {
+
+  constructor(props){
+    super(props)
+    this.oneFunction = this.oneFunction.bind(this);
+
+
+  };
+
+  oneFunction(){
+    console.log("oneFunction");
+    console.log(this.props);
+  };
+  useArrows = () => {
+    console.log("arrow function works w/o binding");
+    console.log(this.props);
+  };
+  render(){
+    console.log(this.state);
     return (
-      <h1>Hello World </h1>
-    );
+      <div>
+        <button
+          onClick={this.oneFunction}
+          >
+          test oneFunction
+        </button>
+        <button>
+          onClick={this.useArrows}
+          > 
+          test useArrows
+          </button>  
+      </div>    
+    )
   }
 }
 
-function myTestWrapper(WrappedComponent){
-  return class extends Component {
-    render(){
-      return (
-        <div style={{backgroundColor:"lightBlue"}}>
-
-          <WrappedComponent />
-          </div>
-      )
-    }
-  }
-}
-
-App = myTestWrapper(App);
 
 export default App;
