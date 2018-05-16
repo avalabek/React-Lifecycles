@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from "./Button";
+import ButtonToggle from "./ButtonToggle";
 
 class App extends Component {
 
@@ -8,13 +9,22 @@ class App extends Component {
   //   data: "No Data yet!",
   //   parentPoll: "No data yet"
   // }
+handleClick(){
+  let speech = "blah,blah,blah";
+  alert(speech);
 
+  
+}
 
   render() {
     return (
       <div>
         <h1> hello world </h1>
-        <Button />
+        <Button 
+          onClick={this.handleClick}
+          
+          />
+         <ButtonToggle /> 
       </div>
     )
   }

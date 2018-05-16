@@ -11,13 +11,22 @@ class App extends Component {
   
 
   render(){
+    const buttonStyles = {
+      color: "pink",
+      backgroundColor: "red"
+    }
+    
+
     return (
       <div>
       <button
-        
-      > button</button>
+        onClick={this.props.onClick}
+        style= {buttonStyles}
+      > 
+      button
+      </button>
       </div>    
-    )
+    );
   }
 }
 export default App;
