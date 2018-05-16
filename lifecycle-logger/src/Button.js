@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from "./Button";
+
 
 class App extends Component {
 
@@ -8,14 +8,15 @@ class App extends Component {
   //   data: "No Data yet!",
   //   parentPoll: "No data yet"
   // }
+  
 
-
-  render() {
+  render(){
     return (
       <div>
-        <h1> hello world </h1>
-        <Button />
-      </div>
+      <button
+        
+      > button</button>
+      </div>    
     )
   }
 }
