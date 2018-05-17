@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-
-class ButtonToggle extends Component {
+class Btn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {toggle: true};
@@ -12,20 +10,13 @@ class ButtonToggle extends Component {
       })
     );
   }
-  
   render() {
-    
-
     return(
       <div>
-        <button 
-          onClick={this.eventHandler}
-        
-          >
-          {this.state.toggle ? 'Click Me' : 'Reset'} 
-          </ button>
+        <button onClick={this.eventHandler} className={this.state.toggle ? '' : 'red'}>{this.state.toggle ? 'Add a class' : 'Remove a class'}</button>
       </div>
     );
   }
 }
-export default ButtonToggle;
+
+ReactDOM.render(<Btn />, document.getElementById("root"));
