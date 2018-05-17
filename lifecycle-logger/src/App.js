@@ -37,6 +37,7 @@
 import React, {Component} from "react";
 import StatelessButton from "./StatelessButton";
 import Input from "./Input";
+import Loading from "./Loading";
 
 class App extends Component{
 
@@ -45,6 +46,7 @@ class App extends Component{
       <div>
         <StatelessButton />
         <Input />
+        <Loading />
 
       </div>  
     )
