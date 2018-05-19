@@ -46,7 +46,7 @@ class App extends Component{
       <div>
         <StatelessButton />
         <Input />
-        <Loading />
+        <Loading text="Andreya"/>
 
       </div>  
     )
